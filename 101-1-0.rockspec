@@ -1,7 +1,11 @@
 package = "101"
-version = "1.0"
+version = "v1.0"
 source = {
    url = "git+http://github.com/burn/101"
+}
+source = {
+   url = "git://github.com/burn/101",
+   tag = "v1.0",
 }
 description = {
    summary = "Minimal CLI and test suite example.",
@@ -15,13 +19,13 @@ description = {
    homepage = "https://github.com/burn/101/blob/main/README.md",
    license = "BSD-2"
 }
-copy_directories = { "test" }
 dependencies = {
    "lua >= 5.4"
    -- If you depend on other rocks, add them here
 }
 build = {
    type = "builtin",
+   copy_directories = { "test" },
    modules = {
       ["101"] = "101.lua",
       ["101lib"] = "101lib.lua",
