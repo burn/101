@@ -1,11 +1,11 @@
 package = "101"
-version = "v1.0.0"
+version = "v1.0-1"
 source = {
    url = "git+http://github.com/burn/101"
 }
 source = {
    url = "git://github.com/burn/101",
-   tag = "v1.0.0",
+   tag = "v1.0-1",
 }
 description = {
    summary = "Minimal CLI and test suite example.",
