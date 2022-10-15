@@ -30,9 +30,9 @@ build = {
    copy_directories = { "test" },
    modules = {
       ["101"] = "101.lua",
-   }
-}
-test = {
+   },
+  test = {
    type = "command",
    script = "tests/eg.lua"
+ }
 }

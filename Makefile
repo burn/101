@@ -5,6 +5,9 @@ README.md: $(wildcard *.lua)  ## update readme
 	printf "\n# 101\nBase example, command line options and test engines\n" > README.md
 	lua $R/readme/readme.lua $^ >> README.md
 
+rocks:
+	luarocks make
+
 pub101:
 	luarocks pack   101-v1.0-1.rockspec
 	luarocks upload 101-v1.0-1.rockspec

@@ -19,7 +19,7 @@ Usage: lua demogo.lua [Options]
 Options:
  -h  --help  help test          = false
  -s  --seed  random number seed = 937162211
- -g  --go    start up action    = nothing]]
+ -g  --go    start up action    = all]]
 
 function l.cli(t) --> t; alters contents of options in `t` from the  command-line
   for k,v in pairs(t) do
