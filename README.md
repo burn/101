@@ -58,10 +58,3 @@ Hence, we use our own (using Park-Miller).
 
 Start up	
 That's all folks.	
-
-#	eg.lua	
-
-Test engine and examples.	
-(c)2022 Tim Menzies <timm@ieee.org> BSD2	
-Test suite.	
-Start-up	
