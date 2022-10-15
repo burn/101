@@ -1,7 +1,7 @@
 -- Test engine and examples.
 -- (c)2022 Tim Menzies <timm@ieee.org> BSD2
-local l=require"lib"
-local m=require"101"
+local l=require"101"
+local m=require"101lib"
 local rand,rint,rnd,sort,srand = l.rand,l.rint,l.rnd,l.sort,l.srand
 local cli,run,the = m.cli,m.run,m.the
 
