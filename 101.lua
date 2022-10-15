@@ -1,5 +1,10 @@
--- Example, CLI and test engines.
+-- # Example, CLI and test engines.
 -- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.
+-- Parses help text string to make table of settings+detaults.  
+-- Updates those settings from command-line args.  
+-- One or all test suite items can be called from the command line.  
+-- Returns to the operating systems the number of test suite failures.
+
 local l=require"101lib"
 local coerce,col,fmt,keys = l.coerce,l.col,l.fmt,l.keys
 local rand,rint,srand     = l.rand, l.rint, l.srand

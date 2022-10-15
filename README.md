@@ -4,6 +4,12 @@ Base example, command line options and test engines
 
 #	101.lua	
 
+# Example, CLI and test engines.	
+(c)2022, Tim Menzies <timm@ieee.org> BSD2 license.	
+Parses help text string to make table of settings+detaults.  	
+Updates those settings from command-line args.  	
+One or all test suite items can be called from the command line.  	
+Returns to the operating systems the number of test suite failures.	
 
 | What | Notes |
 |:---|:---|
@@ -14,6 +20,8 @@ Base example, command line options and test engines
 
 #	101lib.lua	
 
+Misc LUA routines.	
+(c)2022, Tim Menzies <timm@ieee.org> BSD2 license.	
 ## Lists	
 
 | What | Notes |
