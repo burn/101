@@ -6,23 +6,22 @@ Base example, command line options and test engines
 
 # Example, CLI and test engines.	
 (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.	
-Parses help text string to make table of settings+detaults.  	
+Yet another demo of "less is more". 	
+This code is inspired by DocOpt (but tries to be ten times shorter).	
+Parses help text to make table of settings+defaults (see example in 101.lua).  	
 Updates those settings from command-line args.  	
+Supports a simple test suite (see example in test/eg.lua)	
 One or all test suite items can be called from the command line.  	
 Returns to the operating systems the number of test suite failures.	
 
 | What | Notes |
 |:---|:---|
-| <b>cli(t:`tab`) &rArr;  t</b> |  alters contents of options in `t` from the  command-line |
-| <b>run(t:`tab`, funs:`[fun]`) &rArr;  nfails</b> |  runs all `funs` (or `t.go`), resetting options & seed before each |
+| <b>l.cli(t:`tab`) &rArr;  t</b> |  alters contents of options in `t` from the  command-line |
+| <b>l.run(t:`tab`, funs:`[fun]`) &rArr;  nfails</b> |  runs all `funs` (or `t.go`), resetting options & seed before each |
 
 
-
-#	101lib.lua	
-
-Misc LUA routines.	
-(c)2022, Tim Menzies <timm@ieee.org> BSD2 license.	
-## Lists	
+## General Functions	
+### Lists	
 
 | What | Notes |
 |:---|:---|
@@ -30,7 +29,7 @@ Misc LUA routines.
 | <b>l.sort(t:`tab`,  fun:`fun`) &rArr;  t</b> |  return `t`,  sorted by `fun` (default= `<`) |
 
 
-## Strings	
+### Strings	
 
 | What | Notes |
 |:---|:---|
@@ -38,7 +37,7 @@ Misc LUA routines.
 | <b>l.col(s:`str`, n:`num`) &rArr; s</b> |  colorize text |
 
 
-## Maths	
+### Maths	
 ### Random number generator	
 The LUA doco says its random number generator is not stable across platforms.	
 Hence, we use our own (using Park-Miller).	
@@ -50,7 +49,7 @@ Hence, we use our own (using Park-Miller).
 | <b>l.rint(nlo:`num`, nhi:`num`) &rArr;  int</b> |  returns integer from `nlo`..`nhi` (default 0..1) |
 
 
-## Coercion	
+### Coercion	
 
 | What | Notes |
 |:---|:---|
@@ -58,3 +57,5 @@ Hence, we use our own (using Park-Miller).
 | <b>l.cli(t:`tab`) &rArr;  t</b> |  alters contents of options in `t` from the  command-line |
 
 
+Start up	
+That's all folks.	

@@ -8,3 +8,4 @@ README.md: $(wildcard *.lua)  ## update readme
 pub101:
 	luarocks pack   101-v1.0-1.rockspec
 	luarocks upload 101-v1.0-1.rockspec
+	rm *.rock
