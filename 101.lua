@@ -1,4 +1,4 @@
-local l=require"lib"
+local l=require"101lib"
 local coerce,col,fmt,keys = l.coerce,l.col,l.fmt,l.keys
 local rand,rint,srand     = l.rand, l.rint, l.srand
 local cli,options,run
