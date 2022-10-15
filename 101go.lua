@@ -21,4 +21,4 @@ function go.rint()
 
 -- Start-up
 the=cli(the)
-run(the, go)
+os.exit(run(the, go))
