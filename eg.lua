@@ -1,8 +1,9 @@
 -- Test engine and examples.
 -- (c)2022 Tim Menzies <timm@ieee.org> BSD2
-local l=require"101"
-local rand,rint,rnd,sort,srand = l.rand,l.rint,l.rnd,l.sort,l.srand
-local cli,run,the = l.cli,l.run,l.the
+local b4 = {}; for k,_ in pairs(_ENV) do b4[k]=k end
+local _  = require"101"
+local rand,rint,rnd,sort,srand = _.rand, _.rint, _.rnd, _.sort, _.srand
+local cli,run,the              = _.cli,  _.run,  _.the
 
 -- Test suite.
 local eg={}
@@ -23,5 +24,7 @@ function eg.rint()
   for i=1,5 do io.write(".");assert(u[i] == rint(100)) end end
 
 -- Start-up
-the=cli(the)
-os.exit(run(the, eg))
+the         = cli(the)
+local fails = run(the,eg)
+for k,v in pairs(_ENV) do if not b4[k] then print("?",k,type(v)) end end 
+os.exit(fails)

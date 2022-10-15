@@ -1,50 +1,49 @@
--- # Example, CLI and test engines.   
+-- ## Example, CLI and test engines.   
 -- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.   
 -- Yet another demo of "less is more".     
 -- This code is inspired by DocOpt (but tries to be ten times shorter).
--- Parses help text to make table of settings+defaults (see example in 101.lua).  
--- Updates those settings from command-line args.  
--- Supports a simple test suite (see example in test/eg.lua)
--- One or all test suite items can be called from the command line.  
+-- Parses help text to make table of settings+defaults (see example in 101.lua).
+-- Updates those settings from command-line args.
+-- Supports a simple test suite (see example in test/eg.lua).
+-- One or all test suite items can be called from the command line.
 -- Returns to the operating systems the number of test suite failures.
 
-local b4={}; for k,_ in pairs(_ENV) do b4[k]=k end
-local l={}
-l.the, l.help  = {}, [[
-Demo: demo of help and test engine 
+local l  = {the={}, help=[[
+101: minimal help and test engine (yet another demo of "less is more")
 (c)2022 Tim Menzies <timm@ieee.org> BSD2
 
-Usage: lua demogo.lua [Options]
+Usage: lua 101.lua [Options]
 
 Options:
  -h  --help  help test          = false
  -s  --seed  random number seed = 937162211
- -g  --go    start up action    = all]]
+ -g  --go    start up action    = all]]}
+
+-- ## Make and Update Settings
+function l.run(t,funs) --> nfails; runs all `funs` (or `t.go`), resetting options & seed before each
+  local fails,defaults = 0,{}
+  for k,v in pairs(t) do defaults[k]=v end -- cache the old values
+  for _,k in pairs(l.keys(funs)) do        -- for all functions
+    if t.go == "all" or t.go==k then       -- or run a function(s)
+      for k,v in pairs(defaults) do t[k]=v end -- rest to the cache
+      l.srand(t.seed or 937162211)             -- reset the random number seed
+      if funs[k]() == false                    -- run a function
+      then print(l.fmt("# ❌❌❌ %s",k))
+           fails=fails+1                              -- record failure
+      else print(l.fmt("# ✅✅✅ %s",k)) end end end -- record success
+   return fails end
 
 function l.cli(t) --> t; alters contents of options in `t` from the  command-line
   for k,v in pairs(t) do
-    local v=tostring(v)
+    local v = tostring(v)
     for n,x in ipairs(arg) do
       if x=="-"..(k:sub(1,1)) or x=="--"..k then
          v = v=="false" and "true" or v=="true" and "false" or arg[n+1] end end
     t[k] = l.coerce(v) end
   if t.help then os.exit(print(t._help
-        :gsub("([-][%S]+)",          function(s)   return col(s,33) end) 
-        :gsub("(\n? ?)([A-Z][%S]+)", function(b,s) return b..col(s,36) end),"")) end
+        :gsub("([-][%S]+)",          function(s)   return    l.col(s,33) end) 
+        :gsub("(\n? ?)([A-Z][%S]+)", function(b,s) return b..l.col(s,36) end),"")) end
   return t end
-
-function l.run(t,funs) --> nfails; runs all `funs` (or `t.go`), resetting options & seed before each
-  local fails,defaults = 0,{}
-  for k,v in pairs(t) do defaults[k]=v end  -- cache the old values
-  for _,k in pairs(l.keys(funs)) do        -- for all functions
-      if t.go == "all" or t.go==k then      -- or run a function(s)
-        for k,v in pairs(defaults) do t[k]=v end -- rest to the cache
-        l.srand(t.seed or 937162211)            -- reset the random number seed
-        if funs[k]() == false                    -- run a function
-        then print(l.fmt("# ❌❌❌ %s",k))
-             fails=fails+1                              -- record failure
-        else print(l.fmt("# ✅✅✅ %s",k)) end end end -- record success
-   return fails end
 
 -- ## General Functions
 -- ### Lists
@@ -74,11 +73,11 @@ function l.rnd(n, nPlaces) --> num. return `n` rounded to `nPlaces`
 
 l.Seed=937162211
 function l.srand(n)  --> nil; reset random number seed (defaults to 937162211) 
-  Seed = n or 937162211 end
+  l.Seed = n or 937162211 end
 
 function l.rand(nlo,nhi) --> num; return float from `nlo`..`nhi` (default 0..1)
   nlo, nhi = nlo or 0, nhi or 1
-  Seed = (16807 * l.Seed) % 2147483647
+  l.Seed = (16807 * l.Seed) % 2147483647
   return nlo + (nhi-nlo) * l.Seed / 2147483647 end
 
 function l.rint(nlo,nhi)  --> int; returns integer from `nlo`..`nhi` (default 0..1)
@@ -92,12 +91,10 @@ function l.coerce(s) --> any; return int or float or bool or string from `s`
     return s1 end
   return math.tointeger(s) or tonumber(s) or fun(s:match"^%s*(.-)%s*$") end
 
--- Start up
+---  Start up
 l.help:gsub("\n [-][%S]+[%s]+[-][-]([%S]+)[^\n]+= ([%S]+)",
-          function(k,v) l.the[k]=l.coerce(v) end)
+          function(k,v) l.the[k] = l.coerce(v) end)
 l.the._help = l.help
 
-for k,v in pairs(_ENV) do if not b4[k] then print("?",k,type(v)) end end 
-
--- That's all folks.
+--- That's all folks.
 return l

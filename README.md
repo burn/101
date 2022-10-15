@@ -1,23 +1,21 @@
 
-# 101
-Base example, command line options and test engines
-
 #	101.lua	
 
-# Example, CLI and test engines.   	
+## Example, CLI and test engines.   	
 (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.   	
 Yet another demo of "less is more".     	
 This code is inspired by DocOpt (but tries to be ten times shorter).	
-Parses help text to make table of settings+defaults (see example in 101.lua).  	
-Updates those settings from command-line args.  	
-Supports a simple test suite (see example in test/eg.lua)	
-One or all test suite items can be called from the command line.  	
+Parses help text to make table of settings+defaults (see example in 101.lua).	
+Updates those settings from command-line args.	
+Supports a simple test suite (see example in test/eg.lua).	
+One or all test suite items can be called from the command line.	
 Returns to the operating systems the number of test suite failures.	
+## Make and Update Settings	
 
 | What | Notes |
 |:---|:---|
-| <b>l.cli(t:`tab`) &rArr;  t</b> |  alters contents of options in `t` from the  command-line |
 | <b>l.run(t:`tab`, funs:`[fun]`) &rArr;  nfails</b> |  runs all `funs` (or `t.go`), resetting options & seed before each |
+| <b>l.cli(t:`tab`) &rArr;  t</b> |  alters contents of options in `t` from the  command-line |
 
 
 ## General Functions	
@@ -56,5 +54,3 @@ Hence, we use our own (using Park-Miller).
 | <b>l.coerce(s:`str`) &rArr;  any</b> |  return int or float or bool or string from `s` |
 
 
-Start up	
-That's all folks.	
