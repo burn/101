@@ -1,14 +1,5 @@
-R=$(shell dirname $(shell git rev-parse --show-toplevel))
-include $R/dotrc/Makefile
+-include ../etc/Makefile
 
-README.md: $(wildcard *.lua)  ## update readme
+README.md: 101.lua  ## update readme
 	printf "\n# 101\nBase example, command line options and test engines\n" > README.md
-	lua $R/readme/readme.lua $^ >> README.md
-
-rocks:
-	luarocks make
-
-pub101:
-	luarocks pack   101-v1.0-1.rockspec
-	luarocks upload 101-v1.0-1.rockspec
-	rm *.rock
+	lua $R/readme/readme.lua $^ >>README.md

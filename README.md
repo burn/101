@@ -4,9 +4,9 @@ Base example, command line options and test engines
 
 #	101.lua	
 
-# Example, CLI and test engines.	
-(c)2022, Tim Menzies <timm@ieee.org> BSD2 license.	
-Yet another demo of "less is more". 	
+# Example, CLI and test engines.   	
+(c)2022, Tim Menzies <timm@ieee.org> BSD2 license.   	
+Yet another demo of "less is more".     	
 This code is inspired by DocOpt (but tries to be ten times shorter).	
 Parses help text to make table of settings+defaults (see example in 101.lua).  	
 Updates those settings from command-line args.  	
@@ -54,8 +54,14 @@ Hence, we use our own (using Park-Miller).
 | What | Notes |
 |:---|:---|
 | <b>l.coerce(s:`str`) &rArr;  any</b> |  return int or float or bool or string from `s` |
-| <b>l.cli(t:`tab`) &rArr;  t</b> |  alters contents of options in `t` from the  command-line |
 
 
 Start up	
 That's all folks.	
+
+#	eg.lua	
+
+Test engine and examples.	
+(c)2022 Tim Menzies <timm@ieee.org> BSD2	
+Test suite.	
+Start-up	
