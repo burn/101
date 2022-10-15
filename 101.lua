@@ -1,6 +1,6 @@
--- # Example, CLI and test engines.
--- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.
--- Yet another demo of "less is more". 
+-- # Example, CLI and test engines.   
+-- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.   
+-- Yet another demo of "less is more".     
 -- This code is inspired by DocOpt (but tries to be ten times shorter).
 -- Parses help text to make table of settings+defaults (see example in 101.lua).  
 -- Updates those settings from command-line args.  
@@ -91,16 +91,6 @@ function l.coerce(s) --> any; return int or float or bool or string from `s`
     if s1=="false" then return false end
     return s1 end
   return math.tointeger(s) or tonumber(s) or fun(s:match"^%s*(.-)%s*$") end
-
-function l.cli(t) --> t; alters contents of options in `t` from the  command-line
-  for k,v in pairs(t) do
-    local v = tostring(v)
-    for n,x in ipairs(arg) do
-      if x=="-"..(k:sub(1,1)) or x=="--"..k then
-         v = v=="false" and "true" or v=="true" and "false" or arg[n+1] end end
-    t[k] = l.coerce(v) end
-  if t.help then os.exit(print(t._help)) end
-  return t end
 
 -- Start up
 l.help:gsub("\n [-][%S]+[%s]+[-][-]([%S]+)[^\n]+= ([%S]+)",

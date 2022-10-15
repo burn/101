@@ -32,3 +32,7 @@ build = {
       ["101"] = "101.lua",
    }
 }
+test = {
+   type = "command",
+   script = "tests/eg.lua"
+}

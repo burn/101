@@ -24,4 +24,5 @@ function eg.rint()
 
 -- Start-up
 the=cli(the)
+if the.go=="nothing" then the.go="all" end
 os.exit(run(the, eg))
