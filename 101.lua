@@ -1,3 +1,5 @@
+-- Example, CLI and test engines.
+-- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.
 local l=require"101lib"
 local coerce,col,fmt,keys = l.coerce,l.col,l.fmt,l.keys
 local rand,rint,srand     = l.rand, l.rint, l.srand

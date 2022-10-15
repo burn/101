@@ -1,3 +1,5 @@
+-- Misc LUA routines.
+-- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.
 local l={}
 
 -- ## Lists
