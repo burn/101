@@ -1,4 +1,6 @@
 -- ## Example, CLI and test engines.   
+-- [![test](https://github.com/burn/101/actions/workflows/test.yml/badge.svg)](https://github.com/burn/101/actions/workflows/test.yml)
+--    
 -- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.        
 -- Yet another demo of "less is more", this code is inspired by DocOpt 
 -- (but tries to be ten times shorter). $\color{color-code}{your-text-here}$

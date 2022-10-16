@@ -2,9 +2,11 @@
 #	101.lua	
 
 ## Example, CLI and test engines.   	
-(c)2022, Tim Menzies <timm@ieee.org> BSD2 license.  <br>     	
+[![test](https://github.com/burn/101/actions/workflows/test.yml/badge.svg)](https://github.com/burn/101/actions/workflows/test.yml)	
+   	
+(c)2022, Tim Menzies <timm@ieee.org> BSD2 license.        	
 Yet another demo of "less is more", this code is inspired by DocOpt 	
-(but tries to be ten times shorter).	  
+(but tries to be ten times shorter). $\color{color-code}{your-text-here}$	
    	
 > Parses help text to make table of settings+defaults (see example in 101.lua).	
 Updates those settings from command-line args.	
@@ -15,7 +17,7 @@ Returns to the operating systems the number of test suite failures.
 
 | What | Notes |
 |:---|:---|
-| <b>l.run(t:`tab`, funs:`[fun]`) &rArr;  nfails</b> |  runs all `funs` (or `t.go`), resetting options & seed before each |
+| <b>l.run(t:`tab`, funs:`(fun)+`) &rArr;  nfails</b> |  runs all `funs` (or `t.go`), resetting options & seed before each |
 | <b>l.cli(t:`tab`) &rArr;  t</b> |  alters contents of options in `t` from the  command-line |
 
 
