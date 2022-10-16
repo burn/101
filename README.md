@@ -4,8 +4,8 @@
 ## Example, CLI and test engines.   	
 [![test](https://github.com/burn/101/actions/workflows/test.yml/badge.svg)](https://github.com/burn/101/actions/workflows/test.yml)	
 [![license](https://img.shields.io/badge/license-BSD--2-9cf)](LICENSE.md)	
-![language](https://img.shields.io/badge/language-lya--yellow)	
-![purpose](https://img.shields.io/badge/purpose-teaching--gray)	
+![language](https://img.shields.io/badge/language-lua-yellow)	
+![purpose](https://img.shields.io/badge/purpose-teaching-blueviolet)	
      	
 (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.        	
 Yet another demo of "less is more", this code is inspired by DocOpt 	
