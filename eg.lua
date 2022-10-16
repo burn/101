@@ -24,4 +24,4 @@ function eg.rint()
 
 -- Start-up
 the = cli(the)
-os.exits(run(the,eg))
+os.exit(run(the,eg)) -- return code==number of fails. i.e. success if fails==0
