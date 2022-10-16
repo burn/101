@@ -4,7 +4,7 @@
 -- ![language](https://img.shields.io/badge/language-lua-yellow)
 -- ![purpose](https://img.shields.io/badge/purpose-teaching-blueviolet)
 --      
--- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.        
+-- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.  <br>      
 -- Yet another demo of "less is more", this code is inspired by DocOpt 
 -- (but tries to be ten times shorter). 
 --    
@@ -18,9 +18,11 @@ local l  = {the={}, help=[[
 101: minimal help and test engine (yet another demo of "less is more")
 (c)2022 Tim Menzies <timm@ieee.org> BSD2
 
-Usage: lua 101.lua [Options]
+NEEDS: github.com/burn/101/{101.lua, eg.lua}
 
-Options:
+USAGE: lua eg.lua [Options]
+
+OPTIONS:
  -h  --help  help test          = false
  -s  --seed  random number seed = 937162211
  -g  --go    start up action    = all]]}
