@@ -1,9 +1,10 @@
 -- ## Example, CLI and test engines.   
 -- [![test](https://github.com/burn/101/actions/workflows/test.yml/badge.svg)](https://github.com/burn/101/actions/workflows/test.yml)
+-- [![license](https://img.shields.io/badge/license-BSD--2-9cf)](LICENSE.md)
 --    
 -- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.        
 -- Yet another demo of "less is more", this code is inspired by DocOpt 
--- (but tries to be ten times shorter). $\color{color-code}{your-text-here}$
+-- (but tries to be ten times shorter). 
 --    
 -- > Parses help text to make table of settings+defaults (see example in 101.lua).
 -- Updates those settings from command-line args.
