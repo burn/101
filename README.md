@@ -2,9 +2,9 @@
 #	101.lua	
 
 ## Example, CLI and test engines.   	
-(c)2022, Tim Menzies <timm@ieee.org> BSD2 license.        	
+(c)2022, Tim Menzies <timm@ieee.org> BSD2 license.  <br>     	
 Yet another demo of "less is more", this code is inspired by DocOpt 	
-(but tries to be ten times shorter).	 ${\tiny \color{red}{your-text-here}}$
+(but tries to be ten times shorter).	  
    	
 > Parses help text to make table of settings+defaults (see example in 101.lua).	
 Updates those settings from command-line args.	
