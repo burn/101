@@ -1,9 +1,9 @@
 -- ## Example, CLI and test engines.   
 -- [![test](https://github.com/burn/101/actions/workflows/test.yml/badge.svg)](https://github.com/burn/101/actions/workflows/test.yml)
 -- [![license](https://img.shields.io/badge/license-BSD--2-9cf)](LICENSE.md)
--- ![language](https://img.shields.io/npm/v/npm.svg?logo=Lua)
--- ![purpose](https://img.shields.io/npm/v/npm.svg?logo=Google%20Scholar)
---   
+-- ![language](https://img.shields.io/badge/language-lya--yellow)
+-- ![purpose](https://img.shields.io/badge/purpose-teaching--gray)
+--      
 -- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.        
 -- Yet another demo of "less is more", this code is inspired by DocOpt 
 -- (but tries to be ten times shorter). 
