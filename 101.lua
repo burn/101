@@ -4,7 +4,7 @@
 -- ![language](https://img.shields.io/badge/language-lua-yellow)
 -- ![purpose](https://img.shields.io/badge/purpose-teaching-blueviolet)
 --      
--- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.  <br>      
+-- (c)2022, Tim Menzies <timm@ieee.org> BSD2 license.<br>
 -- Yet another demo of "less is more", this code is inspired by DocOpt 
 -- (but tries to be ten times shorter). 
 --    
@@ -36,9 +36,9 @@ function l.run(t,funs) --> nfails; runs all `funs` (or `t.go`), resetting option
       for k,v in pairs(defaults) do t[k]=v end -- rest to the cache
       l.srand(t.seed or 937162211)             -- reset the random number seed
       if funs[k]() == false                    -- run a function
-      then print(l.fmt("# ❌❌❌ %s",k))
+      then print(l.fmt("❌❌❌ %s",k))
            fails=fails+1                              -- record failure
-      else print(l.fmt("# ✅✅✅ %s",k)) end end end -- record success
+      else print(l.fmt("✅✅✅ %s",k)) end end end -- record success
    return fails end
 
 function l.cli(t) --> t; alters contents of options in `t` from the  command-line
