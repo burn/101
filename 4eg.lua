@@ -14,7 +14,7 @@
 -- One or all test suite items can be called from the command line.
 -- Returns to the operating systems the number of test suite failures.
 --  
--- For worked demos of this code, see tinyurl.com/lua101eg.
+-- For worked demos of this code, see http://tinyurl.com/lua101eg.
 
 local l  = {the={}, help=[[
 101: minimal help and test engine (yet another demo of "less is more")
