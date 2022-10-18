@@ -16,6 +16,8 @@ Updates those settings from command-line args.
 Supports a simple test suite (see example in test/eg.lua).	
 One or all test suite items can be called from the command line.	
 Returns to the operating systems the number of test suite failures.	
+ 	
+For worked demos of this code, see tinyurl.com/lua101eg.	
 ## Make and Update Settings	
 
 | What | Notes |
